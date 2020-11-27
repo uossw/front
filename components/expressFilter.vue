@@ -1,10 +1,9 @@
 <template>
   <div>
-    <div class="m1">
-      <div class="s0">
-        <div class="mm">
-        <div class="d01"><span class="sp1">나이를 정해주세요:</span></div>
-        <div class="d02">
+    <div class="container">
+      <div class="row">
+        <div class="d01"><div class="sp1"><span> 나이를 정해주세요:</span></div>
+          <div>
           <select class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-model="expriority.age">
             <option value="20"  selected>20대</option>
             <option value="30">30대</option>
@@ -14,36 +13,26 @@
             <option value="70">70대</option>
             <option value="80">80대</option>
             <option value="90">90대</option>
-
-          </select></div>
-
+          </select>
+          </div>
         </div>
+        <span class="sp100">KEYWORD : </span>
+        <div class=""><input class="in" v-model="expriority.aes" placeholder="ex)자녀,맛집,공원"></div>
 
-        <div class="de">
-        <span class="sp0">KEYWORD:</span>
-        <input class="in" v-model="expriority.aes" placeholder="ex)자녀,맛집,공원">
-
-          <button type="button" class="btn btn-success"  v-on:click="getInform()">
-            <span class="sp2">확인</span>
-            <span class="sp3">√</span>
-          </button>
-        </div>
       </div>
+      <div><button type="button" class="btn btn-success"  v-on:click="getInform()">
+        <span class="sp2">확인</span>
+        <span class="sp3">√</span>
+      </button></div>
     </div>
-    <div class ="wrap">
-
-
-
-
-    </div>
-
-
   </div>
 </template>
 
 <script lang='ts'>
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import {Expriority, Inform} from "~/store/filteredStore";
+import 'materialize-css'
+import 'materialize-css/dist/css/materialize.min.css'
 
 
 
@@ -61,7 +50,7 @@ export default class expressFilter extends Vue {
 
   elements?: Expriority;
   getInform(){
-
+    this.$store.commit('filteredStore/changeAge', this.expriority.age)
     this.$store.dispatch('filteredStore/initData', this.expriority);
     this.datas = this.$store.state.filteredStore.datas;
   }
@@ -83,6 +72,11 @@ export default class expressFilter extends Vue {
 </script>
 
 <style scoped>
+.row{
+  display:flex;
+  flex-direction: column;
+}
+
 .sp0{
   font-size:40px;
 }
@@ -131,11 +125,14 @@ export default class expressFilter extends Vue {
   font-size: 15px;
   margin-left: 20px;
 }
-
+.sp100{
+  font-size: 50px;
+}
 
 .d01, .d02, .d03{
 
-  margin-right: 20px;
+  display: flex;
+  flex-direction: row;
 }
 
 .d03{}

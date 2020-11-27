@@ -8,8 +8,22 @@ export interface Inform{
   district:string
   name: string
   population_all: number
-  school: number
   park : number
+  kindergarten: number
+  school_elementary: number
+  school_middle: number
+  school_high: number
+  school_special: number
+  hagwon: number
+  leisure: number
+  restaurant: number
+  medical: number
+  air_pollution: number
+  cctv: number
+  senior_center: number
+  sport_facility: number
+  library: number
+
 }
 
 
@@ -23,7 +37,12 @@ export interface Expriority{
 export default class FilterStore extends VuexModule {
   idx: number =0;
   priIdx:number = 0;
-  datas?: Inform[];
+  initInform: Inform = {district:"", name:"", population_all:0, park:0, kindergarten:0, school_elementary:0, school_middle:0, school_high:0, school_special:0, hagwon:0,
+  leisure:0, restaurant:0, medical:0, air_pollution:0, cctv:0, senior_center:0, sport_facility:0, library:0}
+  datas: Inform[] = [this.initInform, this.initInform, this.initInform, this.initInform, this.initInform, this.initInform] ;
+  showCheck: boolean = false
+  chartAge: number = 0
+
   @Mutation
   leftTurn() {
     if(this.idx == 1){}
@@ -63,10 +82,15 @@ export default class FilterStore extends VuexModule {
   }
 
   @Mutation
+  changeAge(age: number){
+    this.chartAge = age
+  }
+  @Mutation
   tmpMutation(informs: Inform[]) {
       console.log(informs)
       this.idx = 1
       this.datas = informs
+
 
 
   }
@@ -81,14 +105,14 @@ export default class FilterStore extends VuexModule {
   @Action({rawError: true})
   async initData(elements: Expriority) {
 
-    let query:string = "&age="+elements.age+"&search="+elements.aes
+    let query:string = "&age="+elements.age+"&keyword="+elements.aes
 
 
     console.log(query)
 
 // At request level
 
-    axios.get('http://localhost:8000/api/dong?format=json'+query).then(res=>{
+    axios.get('http://localhost:8000/api/keyword?format=json'+query).then(res=>{
 
       this.context.commit('tmpMutation', res.data)}
       );

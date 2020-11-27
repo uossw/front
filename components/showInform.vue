@@ -134,6 +134,7 @@
 <script lang="ts">
 import {Vue, Component, Watch} from 'vue-property-decorator';
 import 'tui-chart/dist/tui-chart.css'
+import 'materialize-css'
 
 //@ts-ignore
 import {pieChart, lineChart, barChart, columnChart} from '@toast-ui/vue-chart'
