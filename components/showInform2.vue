@@ -69,8 +69,8 @@
     <div v-else-if="$store.state.filteredStore.idx == 2" class="d2">
       <table  class="striped">
         <thead>
-          <tr>
-            <th>#</th>
+          <tr class="ee">
+            <th></th>
             <th>총 인구수</th>
             <th>공원 수</th>
             <th>유치원 수</th>
@@ -91,7 +91,7 @@
         </thead>
         <tbody v-for="data in this.$store.state.filteredStore.datas ">
           <tr>
-            <td>1. {{ data.name}}</td>
+            <td class="ee">{{ data.name}}</td>
             <td>{{ data.population_all}}</td>
             <td>{{ data.park}}</td>
             <td>{{ data.kindergarten}}</td>
@@ -113,37 +113,37 @@
         </tbody>
       </table>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==20"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==20" class="d4">
       <div><img src="cctv.png" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
       <div><img src="academy.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="restaurant.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==30"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==30" class="d4">
       <div><img src="restaurant.png" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
-      <div><img src="kind.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
-      <div><img src="tree.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
-    </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==40"class="d4">
-      <div><img src="ele.png" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
-      <div><img src="mid.jpg" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
+      <div><img src="park.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="enter.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==50"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==40" class="d4">
+      <div><img src="academy.png" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
+      <div><img src="cctv.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
+      <div><img src="hos.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
+    </div>
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==50" class="d4">
       <div><img src="high.jpg" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
       <div><img src="sport.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="park.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==60"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==60" class="d4">
       <div><img src="tree.png" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
       <div><img src="restaurant.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="hos.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==70"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==70"class="d4">
       <div><img src="senior.jpg" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
       <div><img src="sport.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="enter.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
     </div>
-    <div v-else-if="$store.state.filteredStore.idx == 3" v-show="$store.state.filteredStore.chartAge==80"class="d4">
+    <div v-else-if="$store.state.filteredStore.idx == 3 && $store.state.filteredStore.chartAge==80" class="d4">
       <div><img src="senior.jpg" width="100px" height="100px" alt=""><column-chart :data="firstChartData"  :options="firstOption"></column-chart></div>
       <div><img src="cctv.png" width="100px" height="100px" alt=""><column-chart :data="secondChartData"  :options="secondOption"></column-chart></div>
       <div><img src="enter.png" width="100px" height="100px" alt=""><column-chart :data="thirdChartData"  :options="thirdOption"></column-chart></div>
@@ -223,7 +223,10 @@ export default class showInform2 extends Vue{
     {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
     {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
     {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park},
-    {name: this.$store.state.filteredStore.datas[2].name, data: 50}
+    {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].park},
+    {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].park},
+    {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].park},
+    {name: "평균", data: 115.36 }
   ]
   // salePriceSeries: Series[] = []
   firstChartData: ChartData = {series: this.firstChart};
@@ -238,7 +241,10 @@ export default class showInform2 extends Vue{
     {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
     {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
     {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park},
-    {name: this.$store.state.filteredStore.datas[2].name, data: 50}
+    {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].park},
+    {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].park},
+    {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].park},
+    {name: "평균", data: 115.36 }
   ]
   // salePriceSeries: Series[] = []
   secondChartData: ChartData = {series: this.firstChart};
@@ -254,7 +260,10 @@ export default class showInform2 extends Vue{
     {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
     {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
     {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park},
-    {name: this.$store.state.filteredStore.datas[2].name, data: 50}
+    {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].park},
+    {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].park},
+    {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].park},
+    {name: "평균", data: 115.36 }
   ]
   // salePriceSeries: Series[] = []
   thirdChartData: ChartData = {series: this.thirdChart};
@@ -271,11 +280,220 @@ export default class showInform2 extends Vue{
     this.link4 = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+this.$store.state.filteredStore.datas[3].name
     this.link5 = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+this.$store.state.filteredStore.datas[4].name
     this.link6 = "https://search.naver.com/search.naver?where=nexearch&sm=top_hty&fbm=1&ie=utf8&query="+this.$store.state.filteredStore.datas[5].name
-    this.firstChart = [
-      {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
-      {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
-      {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park}
-    ]
+    if(this.$store.state.filteredStore.chartAge==20) {
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].cctv},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].cctv},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].cctv},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].cctv},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].cctv},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].cctv},
+        {name: "평균", data: 115.36 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].hagwon},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].hagwon},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].hagwon},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].hagwon},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].hagwon},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].hagwon},
+        {name: "평균", data: 73.7 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].restaurant},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].restaurant},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].restaurant},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].restaurant},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].restaurant},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].restaurant},
+        {name: "평균", data: 309.54 }
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==30){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].restaurant},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].restaurant},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].restaurant},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].restaurant},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].restaurant},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].restaurant},
+
+        {name: "평균", data: 309.54 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].park},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].park},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].park},
+        {name: "평균", data: 7.24 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].leisure},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].leisure},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].leisure},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].leisure},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].leisure},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].leisure},
+        {name: "평균", data: 27.19}
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==40){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].hagwon},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].hagwon},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].hagwon},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].hagwon},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].hagwon},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].hagwon},
+        {name: "평균", data: 73.7 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].cctv},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].cctv},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].cctv},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].cctv},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].cctv},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].cctv},
+        {name: "평균", data: 115.36 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].medical},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].medical},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].medical},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].medical},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].medical},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].medical},
+
+        {name: "평균", data: 43.8 }
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==50){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].school_high},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].school_high},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].school_high},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].school_high},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].school_high},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].school_high},
+
+        {name: "평균", data: 1.28 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].sport_facility},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].sport_facility},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].sport_facility},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].sport_facility},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].sport_facility},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].sport_facility},
+        {name: "평균", data: 2.25 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].park},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].park},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].park},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].park},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].park},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].park},
+        {name: "평균", data: 7.24}
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==60){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].air_pollution},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].air_pollution},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].air_pollution},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].air_pollution},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].air_pollution},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].air_pollution},
+        {name: "평균", data: 0.11 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].restaurant},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].restaurant},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].restaurant},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].restaurant},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].restaurant},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].restaurant},
+        {name: "평균", data: 309.54 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].medical},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].medical},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].medical},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].medical},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].medical},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].medical},
+        {name: "평균", data: 43.8 }
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==70){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].senior_center},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].senior_center},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].senior_center},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].senior_center},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].senior_center},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].senior_center},
+        {name: "평균", data: 9.79 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].sport_facility},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].sport_facility},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].sport_facility},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].sport_facility},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].sport_facility},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].sport_facility},
+        {name: "평균", data: 2.25}
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].leisure},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].leisure},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].leisure},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].leisure},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].leisure},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].leisure},
+        {name: "평균", data: 27.19 }
+      ]
+    }
+    else if(this.$store.state.filteredStore.chartAge==80){
+      this.firstChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].senior_center},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].senior_center},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].senior_center},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].senior_center},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].senior_center},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].senior_center},
+        {name: "평균", data: 9.79 }
+      ]
+      this.secondChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].cctv},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].cctv},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].cctv},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].cctv},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].cctv},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].cctv},
+        {name: "평균", data: 115.36 }
+      ]
+      this.thirdChart = [
+        {name: this.$store.state.filteredStore.datas[0].name, data: this.$store.state.filteredStore.datas[0].leisure},
+        {name: this.$store.state.filteredStore.datas[1].name, data: this.$store.state.filteredStore.datas[1].leisure},
+        {name: this.$store.state.filteredStore.datas[2].name, data: this.$store.state.filteredStore.datas[2].leisure},
+        {name: this.$store.state.filteredStore.datas[3].name, data: this.$store.state.filteredStore.datas[3].leisure},
+        {name: this.$store.state.filteredStore.datas[4].name, data: this.$store.state.filteredStore.datas[4].leisure},
+        {name: this.$store.state.filteredStore.datas[5].name, data: this.$store.state.filteredStore.datas[5].leisure},
+        {name: "평균", data: 27.19 }
+      ]
+    }
+
+    // salePriceSeries: Series[] = []
+    this.firstChartData = {series: this.firstChart};
+    this.secondChartData = {series: this.secondChart};
+    this.thirdChartData = {series: this.thirdChart};
+
+
+
 
     console.log(this.$store.state.filteredStore.datas[0].name)
 
@@ -285,6 +503,9 @@ export default class showInform2 extends Vue{
 </script>
 
 <style scoped>
+.ee{
+  font-weight:bold;
+}
 .container{
   width: 2000px;
 }
@@ -292,7 +513,8 @@ export default class showInform2 extends Vue{
   width: 180px;
 }
 .cm{
-  font-size:30px;
+  font-size:18px;
+  font-weight:bold;
 }
 
 .full_wrap{

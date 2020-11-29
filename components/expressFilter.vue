@@ -2,7 +2,8 @@
   <div>
     <div class="container">
       <div class="row">
-        <div class="d01"><div class="sp1"><span> 나이를 정해주세요:</span></div>
+        <div class="wh">
+        <div class="d01"><div class="sp1"><span>나이를 정해주세요 :&nbsp</span></div>
           <div>
           <select class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-model="expriority.age">
             <option value="20"  selected>20대</option>
@@ -11,10 +12,10 @@
             <option value="50">50대</option>
             <option value="60">60대</option>
             <option value="70">70대</option>
-            <option value="80">80대</option>
-            <option value="90">90대</option>
+            <option value="80">80대 이상</option>
           </select>
           </div>
+        </div>
         </div>
         <span class="sp100">KEYWORD : </span>
         <div class=""><input class="in" v-model="expriority.aes" placeholder="ex)자녀,맛집,공원"></div>
@@ -72,6 +73,12 @@ export default class expressFilter extends Vue {
 </script>
 
 <style scoped>
+.wh{
+  display:flex;
+  flex-direction: row;
+  justify-content: center;
+  font-weight:bold;
+}
 .row{
   display:flex;
   flex-direction: column;

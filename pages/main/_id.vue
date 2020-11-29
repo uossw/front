@@ -8,10 +8,10 @@
     <div>
       <expressFilter></expressFilter>
     </div>
-    <div class="show">
+    <div v-if="$store.state.filteredStore.chartAge != 0" class="show">
       <showInform></showInform>
     </div>
-    <div >
+    <div v-if="$store.state.filteredStore.chartAge != 0" >
       <footerFilter></footerFilter>
     </div>
   </div>
@@ -61,8 +61,8 @@ export default class Main extends Vue{
   justify-content: space-around;
 }
 .show{
-  margin-top : 50px;
-  margin-bottom: 100px;
+  margin-top : 0px;
+  margin-bottom: 80px;
   display: flex;
   justify-content: center;
 }

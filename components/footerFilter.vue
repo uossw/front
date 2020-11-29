@@ -16,7 +16,7 @@ export default class Footer extends Vue {
   rightNumber(){
 
     this.$store.commit('filteredStore/rightTurn');
-    console.log(this.$store.state.filteredStore.idx);
+    console.log(this.$store.state.filteredStore.chartAge);
   }
   leftNumber(){
 

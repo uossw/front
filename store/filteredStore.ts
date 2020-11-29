@@ -87,13 +87,18 @@ export default class FilterStore extends VuexModule {
   }
   @Mutation
   tmpMutation(informs: Inform[]) {
-      console.log(informs)
+
       this.idx = 1
+      informs.sort(custonSort)
+      console.log(informs)
       this.datas = informs
 
 
-
+    function custonSort(a: Inform, b: Inform) { if(Number(a.district) == Number(b.district)){ return 0} return Number(a.district) > Number(b.district) ? 1 : -1; }
   }
+
+
+
 //
 //   @Mutation
 //   setChartList(chartItems: ChartItems) {
